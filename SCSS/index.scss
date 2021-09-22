@@ -1,0 +1,101 @@
+/* page */
+.container {
+    //LIB
+    .img-circle {
+        border-radius: 50%; //xoa khi update library
+    }
+    .form-control {
+        width: 100%;
+    }
+    //
+    &.player {
+        width: 768px;
+        max-width: 100%;
+
+        background-color: #fef1f6;
+    }
+    .dashboard {
+        text-align: center;
+        position: fixed;
+        top: 0;
+        width: 768px;
+        max-width: 100%;
+        background-color: inherit;
+        .header {
+            margin-top: 15px;
+            marquee {
+                font-size: 18px;
+                color: red;
+            }
+            .songName {
+                margin-top: 5px;
+                margin-bottom: 5px;
+                color: #333333;
+            }
+        }
+        .cd {
+            margin-top: 15px;
+            margin-bottom: 15px;
+            .cd-thumb {
+                width: 35vh;
+                margin: auto;
+            }
+        }
+        .control {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            .row {
+                justify-content: space-around;
+            }
+            .btn {
+                color: #8884b7;
+                &.btn-toggle-play {
+                    width: 62px;
+                    height: 62px;
+                    border-radius: 50%;
+                    font-size: 24px;
+                    color: #fff;
+                    background-color: #ed235f;
+                    .icon-pause {
+                        display: none;
+                    }
+                }
+                &.active {
+                    color: #ed235f;
+                }
+            }
+        }
+    }
+    .playlist {
+        margin-top: 65vh;
+        .song {
+            display: flex;
+            align-items: center;
+
+            margin-top: 6px;
+            margin-bottom: 6px;
+
+            background-color: #fff;
+            box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            > div {
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+            .thumb {
+                flex: 0 0 20%;
+                text-align: center;
+                img {
+                    height: 56px;
+                }
+            }
+            .body {
+                flex: 0 0 60%;
+            }
+            .options {
+                flex: 0 0 20%;
+                text-align: center;
+            }
+        }
+    }
+}
