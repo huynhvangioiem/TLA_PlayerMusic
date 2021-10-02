@@ -36,11 +36,37 @@ $(document).ready(function () {
                 image: "img/1547109568814_500.jpg"
             },
             {
-                name: "Sao Cha Không - Bố Già OST",
+                name: "Có Chàng Trai Viết Lên Cây",
                 singer: "Phan Mạnh Quỳnh",
-                path: "music/Sao-Cha-Khong-Bo-Gia-OST-Phan-Manh-Quynh.mp3",
-                image: "img/f31efb0da9bc984d7246866e6d529d78.jpg"
+                path: "music/CoChangTraiVietLenCay.mp3",
+                image: "img/cochangtraivietlencay.jpg"
             },
+            {
+                name: "Có Một Nơi Như Thế",
+                singer: "Phan Mạnh Quỳnh",
+                path: "music/CoMotNoiNhuThe.mp3",
+                image: "img/1534302483786_640.jpg"
+            },
+            {
+                name: "Gặp Gỡ, Yêu Đương Và Được Bên Em",
+                singer: "Phan Mạnh Quỳnh",
+                path: "music/GapGoYeuDuongVaDuocBenEm.mp3",
+                image: "img/144473.jpg"
+            },
+            {
+                name: "Nhạt",
+                singer: "Phan Mạnh Quỳnh",
+                path: "music/Nhat.mp3",
+                image: "img/nhat.jpg"
+            },
+            {
+                name: "Nước Ngoài",
+                singer: "Phan Mạnh Quỳnh",
+                path: "music/NuocNgoai.mp3",
+                image: "img/nuocngoai.jpg"
+            },
+            
+            
             
         ],
         setConfig: function(key,value) {
