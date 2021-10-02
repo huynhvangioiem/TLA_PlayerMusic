@@ -96,6 +96,18 @@
                 flex: 0 0 20%;
                 text-align: center;
             }
+            &.active{
+                background-color: #ed235f;
+                color: #fff;
+            }
+        }
+    }
+    &.playing{
+        .icon-pause {
+            display: block !important;
+        }
+        .icon-play {
+            display: none;
         }
     }
 }

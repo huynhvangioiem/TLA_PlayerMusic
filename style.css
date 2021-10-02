@@ -92,3 +92,13 @@
   flex: 0 0 20%;
   text-align: center;
 }
+.container .playlist .song.active {
+  background-color: #ed235f;
+  color: #fff;
+}
+.container.playing .icon-pause {
+  display: block !important;
+}
+.container.playing .icon-play {
+  display: none;
+}
