@@ -14,6 +14,11 @@ $(document).ready(function () {
     const btnPrev = get(".btn-prev");
     const btnNext = get(".btn-next");
     const progress = get("#progress");
+    const lyric_title = get(".lyrics .title");
+    const lyric_content = get(".lyrics .content");
+    const dashboard = get(".dashboard");
+    const playlists = get(".playlists");
+    const lyrics = get(".lyrics");
 
     const app = {
         currentIndex: 0,
@@ -27,49 +32,64 @@ $(document).ready(function () {
                 name: "Hãy Cho Chúng Tôi Thấy",
                 singer: "Phan Mạnh Quỳnh",
                 path: "music/Hay-Cho-Chung-Toi-Thay-Phan-Manh-Quynh.mp3",
-                image: "img/1517194642254_640.jpg"
+                image: "img/1517194642254_640.jpg",
+                lyric: `Quốc ca sẽ vang lên trong trận đấu cuối cùng,
+                Ngước mắt lên lá cờ, viết tiếp những giấc mơ.
+                Bao nhiêu người đã kêu tên hy vọng muôn cõi lòng,
+                Hiên ngang không lo sợ, đập tan những nghi ngờ
+                Từ những đứa trẻ thơ... niềm vui là mang theo số áo.
+                Giờ đây nơi Việt Nam... các anh là những... ngôi sao.
+                
+                ĐK:
+                Cho chúng tôi thấy, niềm tin chiến thắng,
+                Chỉ cần cố gắng chiến đấu sẽ chẳng ai quay lưng.
+                Cho chúng tôi thấy tình yêu đất nước,
+                Để từ thôn xóm cho đến phố xá ta hô vang: Việt Nam Việt Nam.`
             },
             {
                 name: "Huyền Thoại",
                 singer: "Phan Mạnh Quỳnh",
                 path: "music/Huyen-Thoai-Phan-Manh-Quynh.mp3",
-                image: "img/1547109568814_500.jpg"
+                image: "img/1547109568814_500.jpg",
+                lyric: "Lời bài hát đang cập nhật"
             },
             {
                 name: "Có Chàng Trai Viết Lên Cây",
                 singer: "Phan Mạnh Quỳnh",
                 path: "music/CoChangTraiVietLenCay.mp3",
-                image: "img/cochangtraivietlencay.jpg"
+                image: "img/cochangtraivietlencay.jpg",
+                lyric: "Lời bài hát đang cập nhật"
             },
             {
                 name: "Có Một Nơi Như Thế",
                 singer: "Phan Mạnh Quỳnh",
                 path: "music/CoMotNoiNhuThe.mp3",
-                image: "img/1534302483786_640.jpg"
+                image: "img/1534302483786_640.jpg",
+                lyric: "Lời bài hát đang cập nhật"
             },
             {
                 name: "Gặp Gỡ, Yêu Đương Và Được Bên Em",
                 singer: "Phan Mạnh Quỳnh",
                 path: "music/GapGoYeuDuongVaDuocBenEm.mp3",
-                image: "img/144473.jpg"
+                image: "img/144473.jpg",
+                lyric: "Lời bài hát đang cập nhật"
             },
             {
                 name: "Nhạt",
                 singer: "Phan Mạnh Quỳnh",
                 path: "music/Nhat.mp3",
-                image: "img/nhat.jpg"
+                image: "img/nhat.jpg",
+                lyric: "Lời bài hát đang cập nhật"
             },
             {
                 name: "Nước Ngoài",
                 singer: "Phan Mạnh Quỳnh",
                 path: "music/NuocNgoai.mp3",
-                image: "img/nuocngoai.jpg"
+                image: "img/nuocngoai.jpg",
+                lyric: "Lời bài hát đang cập nhật"
             },
-            
-            
-            
         ],
-        setConfig: function(key,value) {
+        setConfig: function (key, value) {
             this.config[key] = value;
         },
         playRandom: function () {
@@ -168,8 +188,8 @@ $(document).ready(function () {
 
             //tua song
             progress.onchange = (e) => {
-               const seekTime = audio.duration / 1000 * e.target.value;
-               audio.currentTime = seekTime;
+                const seekTime = audio.duration / 1000 * e.target.value;
+                audio.currentTime = seekTime;
             }
 
             //next song
@@ -186,9 +206,9 @@ $(document).ready(function () {
 
             //prev song
             btnPrev.onclick = () => {
-                if(_this.isRandom) {
+                if (_this.isRandom) {
                     _this.playRandom();
-                }else{
+                } else {
                     _this.prevSong();
                 }
                 audio.play();
@@ -212,9 +232,9 @@ $(document).ready(function () {
 
             //auto next song
             audio.onended = () => {
-                if(_this.isRepeat){
+                if (_this.isRepeat) {
                     audio.play();
-                }else{
+                } else {
                     btnNext.click();
                 }
             }
@@ -222,7 +242,7 @@ $(document).ready(function () {
             //playlist on click
             playlist.onclick = (e) => {
                 const songNode = e.target.closest(".song:not(.active)");
-                if(songNode || e.target.closest(".options")){
+                if (songNode || e.target.closest(".options")) {
                     //click on song
                     if (songNode) {
                         _this.currentIndex = Number(songNode.dataset.index);
@@ -232,12 +252,29 @@ $(document).ready(function () {
                     }
 
                     //click on options
-                    if(e.target.closest(".options")){
+                    if (e.target.closest(".options")) {
                         //do something
                     }
                 }
             }
 
+            //show playlists
+            get(".far.fa-arrow-alt-circle-left").onclick = () => {
+                dashboard.classList.remove("show");
+                lyrics.classList.remove("show");
+                playlists.classList.add("show");
+            }
+            //show lyrics
+            get(".far.fa-arrow-alt-circle-right").onclick = () => {
+                dashboard.classList.remove("show");
+                playlists.classList.remove("show");
+                lyrics.classList.add("show");
+            }
+            get(".far.fa-play-circle").onclick = () => {
+                dashboard.classList.add("show");
+                playlists.classList.remove("show");
+                lyrics.classList.remove("show");
+            }
 
         },
 
@@ -246,6 +283,8 @@ $(document).ready(function () {
             singer.textContent = this.currentSong.singer;
             cd.src = this.currentSong.image;
             audio.src = this.currentSong.path;
+            lyric_title.textContent = this.currentSong.name;
+            lyric_content.textContent = this.currentSong.lyric;
         },
 
         //render playlist
@@ -253,7 +292,7 @@ $(document).ready(function () {
             const htmls = this.songs.map((song, index) => {
                 return (
                     `
-                    <div class="song ${index === this.currentIndex ? "active" : ""}" data-index="${index}">
+                    <div class="col-12 col-m-12 col-s-12 song ${index === this.currentIndex ? "active" : ""}" data-index="${index}">
                     <div class="thumb">
                     <img class="img-circle" src="${song.image}" alt="">
                             </div>
@@ -267,6 +306,8 @@ $(document).ready(function () {
                 );
             });
             playlist.innerHTML = htmls.join("");
+            dashboard.classList.add("show");
+            playlists.classList.remove("show");
         },
 
         start: function () {

@@ -1,54 +1,56 @@
 /* page */
-.container .img-circle {
-  border-radius: 50%;
-}
-.container .form-control {
-  width: 100%;
-}
-.container.player {
-  width: 768px;
-  max-width: 100%;
+body {
   background-color: #fef1f6;
 }
-.container .dashboard {
-  text-align: center;
-  position: fixed;
-  top: 0;
-  width: 768px;
-  max-width: 100%;
-  background-color: inherit;
+
+.container-fluid .player {
+  padding: 10px;
 }
-.container .dashboard .header {
-  margin-top: 15px;
-}
-.container .dashboard .header marquee {
-  font-size: 18px;
+.container-fluid .player marquee {
   color: red;
 }
-.container .dashboard .header .songName {
+.container-fluid .player.playing .icon-pause {
+  display: block !important;
+}
+.container-fluid .player.playing .icon-play {
+  display: none;
+}
+.container-fluid .player i.far {
+  display: none;
+  color: #ed235f;
+  font-size: 24px;
+  cursor: pointer;
+}
+.container-fluid .player i.far.fa-play-circle {
+  margin: 0 25vw;
+}
+.container-fluid .player .dashboard {
+  text-align: center;
+  background-color: inherit;
+}
+.container-fluid .player .dashboard .header .songName {
   margin-top: 5px;
   margin-bottom: 5px;
   color: #333333;
 }
-.container .dashboard .cd {
+.container-fluid .player .dashboard .cd {
   margin-top: 15px;
-  margin-bottom: 15px;
 }
-.container .dashboard .cd .cd-thumb {
-  width: 35vh;
+.container-fluid .player .dashboard .cd .cd-thumb {
   margin: auto;
+  max-width: 58vh;
 }
-.container .dashboard .control {
+.container-fluid .player .dashboard .control {
   margin-top: 10px;
   margin-bottom: 10px;
 }
-.container .dashboard .control .row {
+.container-fluid .player .dashboard .control .row {
   justify-content: space-around;
 }
-.container .dashboard .control .btn {
+.container-fluid .player .dashboard .control .btn {
   color: #8884b7;
 }
-.container .dashboard .control .btn.btn-toggle-play {
+.container-fluid .player .dashboard .control .btn.btn-toggle-play {
   width: 62px;
   height: 62px;
   border-radius: 50%;
@@ -56,16 +58,20 @@
   color: #fff;
   background-color: #ed235f;
 }
-.container .dashboard .control .btn.btn-toggle-play .icon-pause {
+.container-fluid .player .dashboard .control .btn.btn-toggle-play .icon-pause {
   display: none;
 }
-.container .dashboard .control .btn.active {
+.container-fluid .player .dashboard .control .btn.active {
   color: #ed235f;
 }
-.container .playlist {
-  margin-top: 70vh;
+.container-fluid .playlists {
+  max-height: 90vh;
+  overflow: auto;
 }
-.container .playlist .song {
+.container-fluid .playlists .titlePl {
+  text-align: center;
+}
+.container-fluid .playlists .song {
   display: flex;
   align-items: center;
   margin-top: 6px;
@@ -74,31 +80,66 @@
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }
-.container .playlist .song > div {
+.container-fluid .playlists .song > div {
   margin-top: 10px;
   margin-bottom: 10px;
 }
-.container .playlist .song .thumb {
+.container-fluid .playlists .song .thumb {
   flex: 0 0 20%;
   text-align: center;
 }
-.container .playlist .song .thumb img {
+.container-fluid .playlists .song .thumb img {
   height: 56px;
 }
-.container .playlist .song .body {
+.container-fluid .playlists .song .body {
   flex: 0 0 60%;
 }
-.container .playlist .song .options {
+.container-fluid .playlists .song .options {
   flex: 0 0 20%;
   text-align: center;
 }
-.container .playlist .song.active {
+.container-fluid .playlists .song.active {
   background-color: #ed235f;
   color: #fff;
 }
-.container.playing .icon-pause {
-  display: block !important;
+.container-fluid .lyrics .title {
+  text-align: center;
 }
-.container.playing .icon-play {
-  display: none;
+.container-fluid .lyrics .content {
+  text-align: justify;
+  line-height: 1.5;
+  font-size: 18px;
+  padding: 15px;
+}
+
+@media (max-width: 1024px) {
+  i.far {
+    display: inline-block !important;
+  }
+
+  .dashboard {
+    display: none !important;
+  }
+
+  .playlists {
+    display: none !important;
+  }
+
+  .lyrics {
+    display: none !important;
+  }
+
+  .show {
+    display: block !important;
+  }
+}
+@keyframes inLeft {
+  from {
+    opacity: 0;
+    transform: translateX(calc(100%));
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
