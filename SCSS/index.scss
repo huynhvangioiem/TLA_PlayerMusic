@@ -1,6 +1,5 @@
 /* page */
-body{
-
+body {
     background-color: #fef1f6;
 }
 .container-fluid {
@@ -19,15 +18,25 @@ body{
                 display: none;
             }
         }
-        i.far{
+        .partControl {
             display: none;
-            color: #ed235f;
-            font-size: 24px;
-            cursor: pointer;
-            &.fa-play-circle{
-                margin: 0 25vw;
+            margin-top: 10px;
+            justify-content: space-between;
+            position: fixed;
+            padding-left: 15px;
+            padding-right: 15px;
+            bottom: 5px;
+            left: 0;
+            right: 0;
+            i {
+                color: #ed235f;
+                font-size: 24px;
+                cursor: pointer;
+                &.fa-play-circle {
+                    margin-left: 25vw;
+                    margin-right: 25vw;
+                }
             }
-
         }
         .dashboard {
             text-align: center;
@@ -125,8 +134,8 @@ body{
     }
 }
 @media (max-width: 1024px) {
-    i.far{
-        display: inline-block !important;
+    .partControl {
+        display: flex !important;
     }
     .dashboard {
         display: none !important;

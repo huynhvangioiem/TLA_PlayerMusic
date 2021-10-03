@@ -15,14 +15,25 @@ body {
 .container-fluid .player.playing .icon-play {
   display: none;
 }
-.container-fluid .player i.far {
+.container-fluid .player .partControl {
   display: none;
+  margin-top: 10px;
+  justify-content: space-between;
+  position: fixed;
+  padding-left: 15px;
+  padding-right: 15px;
+  bottom: 5px;
+  left: 0;
+  right: 0;
+}
+.container-fluid .player .partControl i {
   color: #ed235f;
   font-size: 24px;
   cursor: pointer;
 }
-.container-fluid .player i.far.fa-play-circle {
-  margin: 0 25vw;
+.container-fluid .player .partControl i.fa-play-circle {
+  margin-left: 25vw;
+  margin-right: 25vw;
 }
 .container-fluid .player .dashboard {
   text-align: center;
@@ -113,8 +124,8 @@ body {
 }
 
 @media (max-width: 1024px) {
-  i.far {
-    display: inline-block !important;
+  .partControl {
+    display: flex !important;
   }
 
   .dashboard {
