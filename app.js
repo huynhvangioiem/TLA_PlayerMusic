@@ -138,12 +138,12 @@ $(document).ready(function () {
             const cdWidth = cd.offsetWidth;
 
             //xu ly cd phong to thu nho
-            document.onscroll = function () {
-                const scrollTop = document.documentElement.scrollTop || window.scrollY;
-                const newCDWidth = cdWidth - scrollTop;
-                cd.style.width = newCDWidth + "px";
-                cd.style.opacity = newCDWidth / cdWidth;
-            }
+            // document.onscroll = function () {
+            //     const scrollTop = document.documentElement.scrollTop || window.scrollY;
+            //     const newCDWidth = cdWidth - scrollTop;
+            //     cd.style.width = newCDWidth + "px";
+            //     cd.style.opacity = newCDWidth / cdWidth;
+            // }
 
             //xu ly cd quay / dung
             const cdAnimate = cd.animate([{ transform: "rotate(360deg)" }], {
