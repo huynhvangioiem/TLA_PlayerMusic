@@ -57,6 +57,7 @@ body {
 }
 .container-fluid .player .dashboard .cd .cd-thumb {
   margin: auto;
+  width: calc(100% / 1.41);
   max-width: calc((100vh - 253px) / 1.41);
 }
 .container-fluid .player .dashboard .control {
