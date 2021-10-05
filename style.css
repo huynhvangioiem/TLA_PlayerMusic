@@ -1,13 +1,20 @@
 /* page */
+.container-fluid .player .dashboard, .container-fluid .playlists, .container-fluid .lyrics {
+  height: calc(100vh - 70px);
+  overflow: auto;
+}
+
 body {
   background-color: #fef1f6;
 }
 
 .container-fluid .player {
   padding: 10px;
+  height: 100vh;
 }
 .container-fluid .player marquee {
   color: red;
+  height: 50px;
 }
 .container-fluid .player.playing .icon-pause {
   display: block !important;
@@ -39,21 +46,22 @@ body {
   text-align: center;
   background-color: inherit;
 }
+.container-fluid .player .dashboard .header {
+  height: 56px;
+  margin-bottom: 15px;
+}
 .container-fluid .player .dashboard .header .songName {
   margin-top: 5px;
   margin-bottom: 5px;
   color: #333333;
 }
-.container-fluid .player .dashboard .cd {
-  margin-top: 15px;
-}
 .container-fluid .player .dashboard .cd .cd-thumb {
   margin: auto;
-  max-width: 55vh;
+  max-width: calc((100vh - 253px) / 1.41);
 }
 .container-fluid .player .dashboard .control {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 .container-fluid .player .dashboard .control .row {
   justify-content: space-around;
@@ -74,10 +82,6 @@ body {
 }
 .container-fluid .player .dashboard .control .btn.active {
   color: #ed235f;
-}
-.container-fluid .playlists {
-  max-height: 90vh;
-  overflow: auto;
 }
 .container-fluid .playlists .titlePl {
   text-align: center;
